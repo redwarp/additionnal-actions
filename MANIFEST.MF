@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-ActionsElements: net.redwarp.actions.SendFilesFTP net.redwarp.actions.HashFiles
+ActionsElements: net.redwarp.actions.ftp.SendFilesFTP net.redwarp.actions.HashFiles

@@ -17,7 +17,7 @@ public class HashFilesUI extends AbstractActionUI{
 
 	public HashFilesUI(AbstractAction parent) {
 		super(parent);
-		bundle = ResourceBundle.getBundle("net.redwarp.actions.locale.HashFilesLocale", Locale.getDefault());
+		bundle = ResourceBundle.getBundle("net.redwarp.actions.locale.HashFilesLocale");
 		
 		getContentPane().setLayout(new FlowLayout(FlowLayout.LEADING));
 		getContentPane().add(new JLabel(bundle.getString("message")));
