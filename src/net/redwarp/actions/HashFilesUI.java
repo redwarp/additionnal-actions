@@ -1,7 +1,6 @@
 package net.redwarp.actions;
 
 import java.awt.FlowLayout;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.swing.JLabel;

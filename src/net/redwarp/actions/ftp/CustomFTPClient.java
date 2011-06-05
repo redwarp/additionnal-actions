@@ -21,18 +21,30 @@ public class CustomFTPClient extends FTPClient {
 	private String host;
 	private String login;
 	private String password;
+	private int port;
 	private boolean overwrite = false;
 	private boolean passive = true;
 	private static ResourceBundle bundle = ResourceBundle.getBundle("net.redwarp.actions.locale.CustomFTPClientLocale");
 	
-	public CustomFTPClient(String host, String login, String password){
-		this.host = host;
+	public CustomFTPClient(String host, String login, String password) throws ActionExecutionException {
+		int portSeparator = host.lastIndexOf(':');
+		if(portSeparator == -1){
+			this.host = host;
+			this.port = 21;
+		} else {
+			this.host = host.substring(0, portSeparator);
+			try{
+				this.port = Integer.valueOf(host.substring(portSeparator + 1, host.length()));
+			} catch (NumberFormatException e){
+				throw new ActionExecutionException(bundle.getString("errorWrongHostname"));
+			}
+		}
 		this.login = login;
 		this.password = password;
 	}
 
 	public void connect() throws SocketException, IOException{
-		connect(host);
+		connect(host, port);
 	}
 	
 	public boolean login() throws IOException {
@@ -113,7 +125,7 @@ public class CustomFTPClient extends FTPClient {
 				if(passive){
 					enterLocalPassiveMode();
 				}
-				
+				setFileType(BINARY_FILE_TYPE);
 				OutputStream os = storeFileStream(file.getName());
 				byte[] buffer = new byte[1024];
 				int count = 0;
