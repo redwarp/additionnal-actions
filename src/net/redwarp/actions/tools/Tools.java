@@ -45,4 +45,16 @@ public class Tools {
 		}
 		return sortByIsDirectory(newList);
 	}
+
+	public static String toHexString(byte[] result) {
+		StringBuilder hexString = new StringBuilder();
+		for(byte b : result){
+			String letter = Integer.toHexString(b & 0xFF);
+			while(letter.length() < 2){
+				letter = "0" + letter;
+			}
+			hexString.append(letter);
+		}
+		return hexString.toString();
+	}
 }

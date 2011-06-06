@@ -13,11 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.redwarp.actions;
+package net.redwarp.actions.hash;
 
 import java.awt.FlowLayout;
-import java.util.ResourceBundle;
-
 import javax.swing.JLabel;
 
 import com.jbbres.lib.actions.elements.InvalidParametersException;
@@ -27,14 +25,12 @@ import com.jbbres.lib.actions.tools.elements.AbstractActionUI;
 
 public class HashFilesUI extends AbstractActionUI{
 	private static final long serialVersionUID = -7700772057375870715L;
-	ResourceBundle bundle;
 
 	public HashFilesUI(AbstractAction parent) {
 		super(parent);
-		bundle = ResourceBundle.getBundle("net.redwarp.actions.locale.HashFilesLocale");
-		
+
 		getContentPane().setLayout(new FlowLayout(FlowLayout.LEADING));
-		getContentPane().add(new JLabel(bundle.getString("message")));
+		getContentPane().add(new JLabel(HashFiles.bundle.getString("message")));
 	}
 
 	@Override
@@ -45,9 +41,9 @@ public class HashFilesUI extends AbstractActionUI{
 
 	@Override
 	protected void setUIParameters(Parameters params)
-			throws InvalidParametersException {
+	throws InvalidParametersException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
