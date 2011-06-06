@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.redwarp.actions;
+package net.redwarp.actions.hash;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import com.jbbres.lib.actions.tools.elements.AbstractAction;
 import com.jbbres.lib.actions.workflow.Workflow;
 
 public class HashFiles extends AbstractAction{
+	public static final ResourceBundle bundle = ResourceBundle.getBundle("net.redwarp.actions.locale.HashFilesLocale");
 
 	public HashFiles(Workflow workflow) throws IOException {
 		super(workflow);
