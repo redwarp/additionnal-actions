@@ -26,12 +26,12 @@ import java.util.Hashtable;
  */
 public final class CharacterSetECI extends ECI {
 
-  private static Hashtable VALUE_TO_ECI;
-  private static Hashtable NAME_TO_ECI;
+  private static Hashtable<Integer, CharacterSetECI> VALUE_TO_ECI;
+  private static Hashtable<String, CharacterSetECI> NAME_TO_ECI;
 
   private static void initialize() {
-    VALUE_TO_ECI = new Hashtable(29);
-    NAME_TO_ECI = new Hashtable(29);
+    VALUE_TO_ECI = new Hashtable<Integer, CharacterSetECI>(29);
+    NAME_TO_ECI = new Hashtable<String, CharacterSetECI>(29);
     // TODO figure out if these values are even right!
     addCharacterSet(0, "Cp437");
     addCharacterSet(1, new String[] {"ISO8859_1", "ISO-8859-1"});

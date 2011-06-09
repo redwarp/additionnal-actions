@@ -79,10 +79,10 @@ public final class Encoder {
     encode(content, ecLevel, null, qrCode);
   }
 
-  public static void encode(String content, ErrorCorrectionLevel ecLevel, Hashtable hints,
+  public static void encode(String content, ErrorCorrectionLevel ecLevel, Hashtable<EncodeHintType, String> hints,
       QRCode qrCode) throws WriterException {
 
-    String encoding = hints == null ? null : (String) hints.get(EncodeHintType.CHARACTER_SET);
+    String encoding = hints == null ? null : hints.get(EncodeHintType.CHARACTER_SET);
     if (encoding == null) {
       encoding = DEFAULT_BYTE_MODE_ENCODING;
     }
@@ -361,7 +361,7 @@ public final class Encoder {
     int maxNumEcBytes = 0;
 
     // Since, we know the number of reedsolmon blocks, we can initialize the vector with the number.
-    Vector blocks = new Vector(numRSBlocks);
+    Vector<BlockPair> blocks = new Vector<BlockPair>(numRSBlocks);
 
     for (int i = 0; i < numRSBlocks; ++i) {
       int[] numDataBytesInBlock = new int[1];
