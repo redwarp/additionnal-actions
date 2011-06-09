@@ -54,6 +54,7 @@ public class EncodeQRCodeService extends AbstractActionService<String[], Image[]
 		g.setBackground(Color.WHITE);
 		g.clearRect(0, 0, scaledImage.getWidth(), scaledImage.getHeight());
 		g.drawImage(image, scale, scale, image.getWidth() * scale, image.getHeight() * scale, null);
+		g.dispose();
 		return scaledImage;
 	}
 }

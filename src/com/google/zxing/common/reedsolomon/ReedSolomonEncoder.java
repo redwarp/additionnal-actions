@@ -27,14 +27,14 @@ import java.util.Vector;
 public final class ReedSolomonEncoder {
 
   private final GF256 field;
-  private final Vector cachedGenerators;
+  private final Vector<GF256Poly> cachedGenerators;
 
   public ReedSolomonEncoder(GF256 field) {
     if (!GF256.QR_CODE_FIELD.equals(field)) {
       throw new IllegalArgumentException("Only QR Code is supported at this time");
     }
     this.field = field;
-    this.cachedGenerators = new Vector();
+    this.cachedGenerators = new Vector<GF256Poly>();
     cachedGenerators.addElement(new GF256Poly(field, new int[] { 1 }));
   }
 
