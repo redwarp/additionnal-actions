@@ -41,7 +41,7 @@ public class HashFilesService extends AbstractActionService<File[], String[]>{
 	public String[] executeAction(File[] files, Parameters params)
 	throws ActionExecutionException {
 		if(files == null){
-			throw new ActionExecutionException("Empty files");
+			return null;
 		}
 		for(File file : files){
 			if(file.isDirectory()){

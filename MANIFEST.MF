@@ -1,2 +1,2 @@
-Manifest-Version: 1.1
+Manifest-Version: 1.1.1
 ActionsElements: net.redwarp.actions.ftp.SendFilesFTP net.redwarp.actions.hash.HashFiles net.redwarp.actions.qrcode.EncodeQRCode
