@@ -24,7 +24,7 @@ public class EncodeQRCodeService extends AbstractActionService<String[], Image[]
 	public Image[] executeAction(String[] toEncode, Parameters arg1)
 			throws ActionExecutionException {
 		if(toEncode == null){
-			throw new ActionExecutionException(EncodeQRCode.bundle.getString("errorNoInput"));
+return null;
 		}
 		
 		Image images[] = new Image[toEncode.length];
